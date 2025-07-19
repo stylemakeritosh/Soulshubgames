@@ -20,7 +20,7 @@ local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 local Lighting = game:GetService("Lighting")
 
--- Billboard GUI above player's head
+-- Billboard
 local part = Instance.new("Part", Workspace)
 part.Anchored = true
 part.CanCollide = false
@@ -52,7 +52,7 @@ task.delay(10, function()
     part:Destroy()
 end)
 
--- Initial notifications
+-- notif
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Script Loaded",
     Text = "Have Fun With The Script, " .. player.Name .. ", Enjoyy",
@@ -64,7 +64,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Duration = 6.5
 })
 
--- Update Tab
+-- Update
 local UpdateTab = Window:CreateTab("Update")
 UpdateTab:CreateLabel("What's New? Check Discord for updates.", nil)
 UpdateTab:CreateButton({
@@ -79,7 +79,7 @@ UpdateTab:CreateButton({
     end,
 })
 
--- Basic GUI
+-- boss
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "BasicGUI"
 ScreenGui.ResetOnSpawn = false
@@ -141,7 +141,7 @@ task.spawn(function()
     end
 end)
 
--- Farm Tab: Auto Dig (Fast)
+-- Auto Dig (Fast)
 local FarmTab = Window:CreateTab("Farm")
 local LocalPlayer = Players.LocalPlayer
 local Backpack = LocalPlayer:WaitForChild("Backpack")
@@ -228,7 +228,7 @@ FarmTab:CreateToggle({
     end,
 })
 
--- Farm Tab: Auto Dig (Slow)
+-- Auto Dig (Slow)
 getgenv().autoDigSlowEnabled = false
 function get_tool()
     return LocalPlayer.Character:FindFirstChildOfClass("Tool")
@@ -329,7 +329,7 @@ FarmTab:CreateToggle({
     end,
 })
 
--- Mecahnic Tab
+-- 
 local MecahnicTab = Window:CreateTab("Others")
 local vehicleList = {
     "ATV", "Golf Cart", "Koi Truck", "Commander", "Silver",
@@ -363,7 +363,7 @@ for _, vehicleName in ipairs(vehicleList) do
     })
 end
 
--- Shop Tab
+-- Shop
 local ShopTab = Window:CreateTab("Shop")
 local noclipConn
 local function setNoclip(state)
@@ -449,7 +449,7 @@ ShopTab:CreateButton({
     end,
 })
 
--- Misc/Player Tab
+-- Misc
 local MiscTab = Window:CreateTab("Misc/Player")
 local staffList = {129332660, 146089324, 556677889}
 local notifyStaffEnabled = true
@@ -679,7 +679,7 @@ MiscTab:CreateButton({
     end,
 })
 
--- Inventory Tab
+-- Inventory
 local InventoryTab = Window:CreateTab("Inventory")
 local Rocky = Workspace:WaitForChild("World"):WaitForChild("NPCs"):WaitForChild("Rocky")
 local SellAllItems = ReplicatedStorage:WaitForChild("DialogueRemotes"):WaitForChild("SellAllItems")
@@ -711,7 +711,7 @@ task.spawn(function()
     end
 end)
 
--- Magnets Tab
+-- Magnets
 local MagnetsTab = Window:CreateTab("Magnets")
 local playerName = player.Name
 local remotes = ReplicatedStorage:WaitForChild("Remotes")
@@ -736,7 +736,7 @@ MagnetsTab:CreateButton({ Name = "Light Bulb", Callback = function() equipMagnet
 MagnetsTab:CreateButton({ Name = "Red Magnet", Callback = function() equipMagnet("Red Magnet") end })
 MagnetsTab:CreateButton({ Name = "Basic Magnet", Callback = function() equipMagnet("Basic Magnet") end })
 
--- Teleport Bosses Tab
+-- Teleport
 local TeleportBossesTab = Window:CreateTab("Teleport Bosses")
 TeleportBossesTab:CreateButton({
     Name = "Teleport to King Crab",
@@ -836,7 +836,7 @@ TeleportBossesTab:CreateButton({
     end,
 })
 
--- Teleport Npc Tab
+-- Teleport Npc
 local TeleportNpcTab = Window:CreateTab("Teleport Npc")
 local npcsFolder = Workspace:WaitForChild("World"):WaitForChild("NPCs")
 local function teleportToNPC(npcName)
@@ -872,7 +872,7 @@ for _, npcName in ipairs(npcNames) do
     })
 end
 
--- Teleport Island Tab
+-- Teleportt
 local TeleportIslandTab = Window:CreateTab("Teleport Island")
 TeleportIslandTab:CreateButton({
     Name = "Teleport to Fox Town",
@@ -926,7 +926,6 @@ TeleportIslandTab:CreateButton({
     end,
 })
 
--- Boss Notification System
 local bossesFolder = Workspace.World:WaitForChild("NPCs")
 local bossesToWatch = {
     ["Molten Monstrosity"] = true,
